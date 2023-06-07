@@ -2,3 +2,40 @@
   text-align: center;
 }
 
+.nav-link {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  font-variant:small-caps;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: rgb(255, 255, 255) !important;
+}
+.navbar{
+  background-color: rgba(0, 0, 0, 0.525);
+}
+.LogAcc{
+  display: flex;
+color: rgb(0, 0, 0);
+list-style: none;
+text-decoration: none;
+border: none;
+margin: 2px;
+padding: 0 15px 0 15px ;
+font-weight: 550;
+}
+.LogAcc li {
+  margin-right: 10px; /* Add margin between the buttons */
+  border-radius: 5px;
+}
+.LogAcc li:first-child{
+background-color: rgb(255, 255, 255);
+ 
+} 
+.LogAcc li:last-child {
+  margin-right: 0; /* Remove margin for the last button */
+background-color: rgb(255, 255, 255);
+}
