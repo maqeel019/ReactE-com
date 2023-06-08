@@ -18,7 +18,7 @@
   background-color: rgba(0, 0, 0, 0.525);
 }
 .LogAcc{
-  display: flex;
+display: flex;
 color: rgb(0, 0, 0);
 list-style: none;
 text-decoration: none;
@@ -26,16 +26,55 @@ border: none;
 margin: 2px;
 padding: 0 15px 0 15px ;
 font-weight: 550;
+
 }
 .LogAcc li {
   margin-right: 10px; /* Add margin between the buttons */
   border-radius: 5px;
 }
 .LogAcc li:first-child{
-background-color: rgb(255, 255, 255);
- 
+  background-color: rgb(255, 255, 255);
+  border: none;
 } 
 .LogAcc li:last-child {
   margin-right: 0; /* Remove margin for the last button */
-background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+}
+.LogAcc:first-child:hover{
+  color: rgb(255, 240, 240) !important;
+  background-color: black;
+  
+}
+/* FooterMenu */
+.footerMenu .navbar ,  .footerMenu ul{
+  background-color: rgb(255, 255, 255);
+  list-style: none;
+}
+.footerMenu .nav-link {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
+  animation: pop-up 2s ease-in-out infinite;
+
+}
+ .footerMenu .nav-link:focus,
+.footerMenu .nav-link:hover {
+  color: rgb(0, 0, 0) !important;
+}
+.footerMenu hr{
+  width: 100%;
+  color:  rgb(201, 201, 201);
+  height: 1px;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

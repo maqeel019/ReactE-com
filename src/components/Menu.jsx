@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Menu() {
   return (
-    <div>
+    <div >
       <nav className="navbar-expand-lg navbar fixed-top" >
         <div className="container-fluid">
           <button
