@@ -3,9 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import BeforeFooter from "./BeforeFooter";
 
 export default function About() {
   return (
@@ -129,146 +127,8 @@ export default function About() {
           </a>
         </div>
       </div>
-
-      <div className="card4 m-4">
-        <Container>
-          <Row>
-            <Col>
-              <Card style={{ width: "14rem" }}>
-                <Card.Img variant="top" src="/images/quality.png" />
-                <Card.Body>
-                  <h5>Best Quality</h5>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos, tempore!
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "14rem" }}>
-                <Card.Img variant="top" src="/images/tag.png" />
-                <Card.Body>
-                  <h5>Best Offers</h5>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos, tempore!
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "14rem" }}>
-                <Card.Img variant="top" src="/images/delivery.png" />
-                <Card.Body>
-                  <h5>Worldwide Shipping</h5>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos, tempore!
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "14rem" }}>
-                <Card.Img variant="top" src="/images/lock.png" />
-                <Card.Body>
-                  <h5>Secure Payment</h5>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quos, tempore!
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <div className="footerMenu">
-<hr />
-        <Container>
-          <Row>
-            <Col>
-              <Navbar variant="dark">
-                <Container>
-                  <Nav className="me-auto flex-column">
-                  <h4 className="">Quick Links</h4>
-                    <ul>
-
-                  <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link "  aria-current="page" to="/store">
-                  Store
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-              <li >
-                <Link className="nav-link" to="/cart">
-                  Cart
-                </Link>
-              </li>
-              <li >
-                <Link  className="nav-link" to="/account">
-                  Account
-                </Link>
-              </li>
-                    </ul>
-                  </Nav>
-                  
-                </Container>
-              </Navbar>
-            </Col>
-            <Col>
-              <Navbar variant="dark">
-                <Container>
-                  <Nav className="me-auto flex-column">
-                  <h4>For Him</h4>
-                    <Nav.Link href="#home">Men Jeans</Nav.Link>
-                    <Nav.Link href="#features">Men Shirts</Nav.Link>
-                    <Nav.Link href="#pricing">Men Shorts</Nav.Link>
-                    <Nav.Link href="#features">Men Shoes</Nav.Link>
-                    <Nav.Link href="#pricing">Men Accessories</Nav.Link>
-                    <Nav.Link href="#pricing">Men Jackets</Nav.Link>
-
-                  </Nav>
-                </Container>
-              </Navbar>
-            </Col>
-
-            <Col>
-              <Navbar variant="light">
-                <Container>
-                  <Nav className="me-auto flex-column">
-                  <h4>For Her</h4>
-                    <Nav.Link href="#home">Women Jeans</Nav.Link>
-                    <Nav.Link href="#features">Women Shirts</Nav.Link>
-                    <Nav.Link href="#pricing">Women Shorts</Nav.Link>
-                    <Nav.Link href="#features">Women Shoes</Nav.Link>
-                    <Nav.Link href="#pricing">Women Accessories</Nav.Link>
-                    <Nav.Link href="#pricing">Women Jackets</Nav.Link>
-                  </Nav>
-                </Container>
-              </Navbar>
-            </Col>
-          </Row>
-        </Container>
-      <hr />
-      </div>
+     
+     <BeforeFooter /> 
     </div>
   );
 }

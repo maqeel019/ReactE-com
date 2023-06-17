@@ -1,29 +1,50 @@
-import './App.css';
-import {BrowserRouter as Router ,Routes  , Route } from "react-router-dom";
-import  About  from './components/About';
-import Contact from './components/Contact';
-import Home from './components/Home';
-import  Store from './components/Store';
-import  Menu  from './components/Menu';
-import Account from './components/Account';
-import Cart from './components/Cart';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
+import Store from "./components/Store";
+import Menu from "./components/Menu";
+import Account from "./components/Account";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import data from "./components/Storedata";
 
 function App() {
+  const [cart, setCart] = useState(0); // Simplified initial cart state
+
+  function handleAddToCart(itemId) {
+    setCart((prevCart) => prevCart + 1); // Using functional state update to avoid potential issues with asynchronous updates
+  }
+
+  const products = data.map((item) => {
+    const options = item.option ? Object.values(item.option) : undefined;
+    return {
+      id: item.id,
+      image: item.image,
+      intro: item.intro,
+      type: item.type,
+      price: item.price,
+      options: options,
+      feature: item.feature,
+    };
+  });
+
   return (
     <div className="App">
-      <Router > 
-        <Menu />
-     <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/cart" element={<Cart />} />
-
-
-     </Routes>
-    </Router>
+      <Router>
+        <Menu cart={cart} />
+        <Routes>
+          <Route exact path="/" element={<Home products={products} increCart={handleAddToCart} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/store" element={<Store products={products} increCart={handleAddToCart} />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
