@@ -47,7 +47,7 @@ export default function About() {
           nostrum numquam enim cupiditate odio quam?
         </p>
 
-        <Container>
+        <Container className="teamContainer">
           <Row>
             <Col>
               <Card style={{ width: "18rem" }}>

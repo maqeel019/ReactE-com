@@ -86,7 +86,7 @@ export default function Contact() {
                  name="message"
                  value={form.message}
                  onChange={handleChange}
-                 minLength="10"
+                 minLength="100"
                  />
                  <Form.Text className="text-muted">
                     Words : {form.message.length}

@@ -44,17 +44,23 @@ function Menu({ cart }) {
                   Contact
                 </Link>
               </li>
+
+              <li className="nav-item btnCart ">
+                <Link to="/cart">
+                  <button className="LogAcc"> 
+                 <p>{cart}</p> 
+                     <img src="/images/Inkedcart3.png" alt="" /> </button>
+                </Link>
+              </li>
+              <li>
+                
+                <Link to="/account">
+                  <button className="LogAcc">Account</button>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
-
-        <Link to="/cart">
-          <button className="LogAcc">Cart({cart}) </button>
-        </Link>
-
-        <Link to="/account">
-          <button className="LogAcc">Account</button>
-        </Link>
       </nav>
     </div>
   );

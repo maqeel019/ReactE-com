@@ -26,20 +26,56 @@ a {
 
 .LogAcc {
   display: flex;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   border: none;
+  background-color: rgba(27, 29, 29, 0.82);
   border-radius: 5px;
   margin: 2px;
   padding: 2px 15px 2px 15px;
   font-weight: 550;
 }
-
+.LogAcc{
+  position: relative;
+  max-width:100px ;
+  max-height: 28px;
+  display: grid;
+  left: 28vw;
+  top: 10px;
+}
 .LogAcc:hover {
   color: rgb(255, 240, 240) !important;
   background-color: black;
-
+}
+.LogAcc p{
+  margin-top: -5px;
+  font-size: 10px;
+  font-weight: 900;
+}
+.LogAcc img{
+  margin-top: -20px;
+  
+  width: 70px;
+  height: 20px;
+}
+@media screen and (max-width: 720px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+  } 
+  .LogAcc {
+    left: 38vw;
+  }
+  .navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.navbar-toggler{
+  background-color: rgb(255, 255, 255);
+}
+.footerContainer {
+  padding-left: 10px !important;
 }
 
+}
 /* FooterMenu */
 .footerContainer {
   padding-left: 10vw;
@@ -83,3 +119,4 @@ a {
     transform: scale(1);
   }
 }
+

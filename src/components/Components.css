@@ -1,7 +1,9 @@
 .AboutSection,
 .firstSection,
 .ContactHeader,
-.storeSection {
+.storeSection,
+.headerSectionAccount,
+.CartSection {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -189,6 +191,7 @@ hr {
 .products {
   display: grid;
   grid-template-columns: repeat(4, 25%);
+  justify-content: space-around;
 }
 
 .storeContainer {
@@ -201,8 +204,6 @@ hr {
 }
 
 .featured {
-  top: 10px;
-  left: 10px;
   background-color: rgba(0, 0, 0, 0.548);
   color: white;
   padding: 5px;
@@ -230,4 +231,117 @@ hr {
   text-transform: uppercase;
   background-color: white;
   color: black;
+}
+
+
+/* Account Component */
+.headerSectionAccount{
+  background: url(/public/images/store1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sectionAccount{
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: flex-start;
+}
+aside{
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  margin-top: 15vh;
+  justify-content: flex-start;
+}
+aside ul li  {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+  width: 300px;
+  border: 1px solid rgb(227, 218, 218);
+}
+aside ul li:hover{
+      cursor: pointer;
+}
+aside ul li:first-child {
+  background-color: rgb(225, 225, 225);
+  cursor: default;
+}
+
+
+/* Cart Component */
+.CartSection{
+  background: url(/public/images/cart1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cartBox {
+  margin-bottom: 20px;
+}
+.cartBox p {
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  width: 200px;
+  align-items: center;
+}
+.imagetd{
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+    align-items: center;
+}
+.itemInfo {
+  display: flex;
+  align-items: center;
+}
+
+tbody img {
+  width: 100px;
+}
+
+input[type='number'] {
+  width: 50px;
+}
+
+
+
+
+
+@media screen and (max-width: 720px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+  } 
+  .teamContainer .col{
+    margin-left: 10vw;
+  }
+  .card3 .content h3 {
+    margin-top: 0px;
+  }
+  
+  .card3 .content img {
+    margin: 0px;
+    width: 50px;
+  }
+  .card4{
+    margin-left: 25vw;
+  }
+  .contactBody .row{
+    display: block;
+  }
+  .contactForm {
+    width: 100vw;
+  }
 }

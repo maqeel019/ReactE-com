@@ -19,7 +19,7 @@ export default function Store(props) {
         {product.feature && <h4 className="featured">Featured</h4>}
         <img src={product.image} alt="" />
         <h4>{product.intro}</h4>
-        <h6>{product.type}</h6>
+        <h6>{product.brand}</h6>
         <h4>{product.price}$</h4>
         {product.options && product.options.length > 0 ? (
           <DropdownButton title={selectedOption || "SELECT OPTION"} >
@@ -37,7 +37,7 @@ export default function Store(props) {
           </DropdownButton>
         ) : (
           <button
-            onClick={() => props.increCart(product.id)}
+            onClick={() => props.increCart(product , product.id)}
             className="storeButton btn btn-primary"
           >
             Add to Cart
