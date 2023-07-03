@@ -169,7 +169,7 @@ hr {
 .contactForm {
   width: 40vw;
   background-color: rgb(214, 219, 224);
-  height: 65vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
 }
@@ -315,8 +315,19 @@ input[type='number'] {
   width: 50px;
 }
 
-
-
+.discount input{
+  width: 120px;
+  border: 1px solid black;
+}
+.discount button{
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid black;
+  margin: 5px;
+  padding: 0 15px 0 15px;
+  border-radius: 3px;
+  font-weight: 550;
+}
 
 
 @media screen and (max-width: 720px) {

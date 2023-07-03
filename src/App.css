@@ -36,7 +36,7 @@ a {
 }
 .LogAcc{
   position: relative;
-  max-width:100px ;
+  max-width:100px;
   max-height: 28px;
   display: grid;
   left: 28vw;
@@ -54,7 +54,7 @@ a {
 .LogAcc img{
   margin-top: -20px;
   
-  width: 70px;
+  width: 60px;
   height: 20px;
 }
 @media screen and (max-width: 720px) {
@@ -63,7 +63,7 @@ a {
     grid-template-columns: repeat(2, 45%);
   } 
   .LogAcc {
-    left: 38vw;
+    left: 36vw;
   }
   .navbar {
   background-color: rgba(0, 0, 0, 0.8);
@@ -76,6 +76,11 @@ a {
 }
 
 }
+/* @media screen and (min-width: 720px) {  
+  .LogAcc {
+    left: 45vw;
+  }
+} */
 /* FooterMenu */
 .footerContainer {
   padding-left: 10vw;

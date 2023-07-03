@@ -39,7 +39,6 @@ function App() {
 
   // console.log(cartItem);
   const products = data.map((item) => {
-    const options = item.option ? Object.values(item.option) : undefined;
     return {
       id: item.id,
       image: item.image,
@@ -47,15 +46,13 @@ function App() {
       brand : item.brand,
       type: item.type,
       price: item.price,
-      options: options,
       feature: item.feature,
     };
   });
 
   const handleAddToCart = (item ) => {
-    setCart((prevCart) => prevCart + 1 );
+    
     const itemExists = cartItem.some((cartItem) => cartItem.id === item.id);
-  
   if (itemExists) {
     console.log("Item already in cart:", item);
   } else {
@@ -63,9 +60,17 @@ function App() {
   setcartItem((prevCartItem) => [...prevCartItem, newItem]);
   console.log("Object ID:", item);
   }
+  
+    if(!itemExists){
+      setCart( (prevCart) => prevCart + 1 );
+    }
+    else {
+      alert("Object already exists")
+    }
 };
 return (
     <div className="App">
+    
       <Router>
         <Menu cart={cart} />
         <Routes>
@@ -78,6 +83,7 @@ return (
         </Routes>
         <Footer />
       </Router>
+    <h4>© 2023 M Aqeel. All rights reserved.</h4>
     </div>
   );
 }

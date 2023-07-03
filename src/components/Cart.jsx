@@ -2,6 +2,20 @@ import React, { useState ,useEffect } from 'react';
 
 export default function Cart({ cartItem, setcartItem }) {
   const [totalprice, settotalprice] = useState();
+  const [clicked, setClicked] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleApplyCoupon = () => {
+    const discount = 0.2
+    const discountPrice = totalprice - totalprice * discount
+    if (inputValue === 'khan' && !clicked) {
+      setClicked(true);
+      settotalprice(discountPrice)
+    }
+    else{
+      setInputValue("Invalid coupon")
+    }
+  };
 
   useEffect(() => {
     const totalPriceSum = cartItem.reduce(
@@ -50,7 +64,7 @@ export default function Cart({ cartItem, setcartItem }) {
                   </div>
                 </td>
                 <td>
-                  <p>{item.price}</p>
+                  <p>{item.price}$</p>
                 </td>
                 <td>
                   <input
@@ -58,13 +72,14 @@ export default function Cart({ cartItem, setcartItem }) {
                     name="quantity"
                     id=""
                     value={item.quantity}
-                    onChange={(e) =>
-                      handleQuantityChange(item.id, e.target.value)
-                    }
+                    onChange={(e) => {
+                      const newQuantity = Math.max(0, parseInt(e.target.value, 10));
+                      handleQuantityChange(item.id, newQuantity);
+                    }}
                   />
                 </td>
                 <td>
-                  <p>{itemTotalPrice}</p>
+                  <p>{itemTotalPrice}$</p>
                 </td>
               </tr>
             );
@@ -79,8 +94,18 @@ export default function Cart({ cartItem, setcartItem }) {
       <div className="CartSection"></div>
       
       {itemCart}
-
-      <div>Total Price: {totalprice}</div>
+      <div className="discount">
+        <input 
+        type="text" 
+        width='10px'
+        maxLength={5} 
+        placeholder='Get 20% off'
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        /> 
+        <button onClick={handleApplyCoupon}>Apply</button>
+        </div>
+      <div><h4> Total Price: {totalprice}$</h4></div>
     </div>
   );
 }
