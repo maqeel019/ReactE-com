@@ -11,33 +11,9 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import data from "./components/Storedata";
 
-
 function App() {
-
-  const [cartItem , setcartItem] = useState([])
-
-  let saveCart  =() => {
-    // Retrieve cart data from localStorage or set default value
-    const storedCart = localStorage.getItem('cart');
-    return storedCart ? Number(storedCart) : 0;
-
-  }
- 
-  // useEffect(() => {
-  //   const storeItem =JSON.parse(localStorage.getItem('cartItem')) 
-  //   if (storeItem && storeItem !== 'undefined') {
-  //     setcartItem(storeItem);
-  //   }
-
-  // },[]) 
-
-  const [cart, setCart] = useState(saveCart)
-  useEffect(() => {
-    localStorage.setItem('cart', cart.toString());
-    // localStorage.setItem('cartItem', JSON.stringify(cartItem));
-  }, [cart ]);
-
-  // console.log(cartItem);
+  const [cartItem, setCartItem] = useState([]);
+  const [cart, setCart] = useState(0);
   const products = data.map((item) => {
     return {
       id: item.id,
@@ -50,23 +26,17 @@ function App() {
     };
   });
 
-  const handleAddToCart = (item ) => {
-    
+   const handleAddToCart = (item) => {
     const itemExists = cartItem.some((cartItem) => cartItem.id === item.id);
-  if (itemExists) {
-    console.log("Item already in cart:", item);
-  } else {
+    if (itemExists) {
+    alert("Item already in cart:", item);
+      return;
+    }
+
     const newItem = { ...item, quantity: 1 };
-  setcartItem((prevCartItem) => [...prevCartItem, newItem]);
-  console.log("Object ID:", item);
-  }
-  
-    if(!itemExists){
-      setCart( (prevCart) => prevCart + 1 );
-    }
-    else {
-      alert("Object already exists")
-    }
+    setCartItem((prevCartItem) => [...prevCartItem, newItem]);
+    setCart((prevCart) => prevCart + 1);
+    console.log("Object ID:", item)
 };
 return (
     <div className="App">
@@ -79,7 +49,7 @@ return (
           <Route path="/contact" element={<Contact />} />
           <Route path="/store" element={<Store products={products} increCart={handleAddToCart} />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/cart" element={<Cart cartItem = {cartItem}  setcartItem = {setcartItem} />} />
+          <Route path="/cart" element={<Cart cartItem = {cartItem}  setcartItem = {setCartItem} />} />
         </Routes>
         <Footer />
       </Router>

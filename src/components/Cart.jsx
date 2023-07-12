@@ -95,17 +95,22 @@ export default function Cart({ cartItem, setcartItem }) {
       
       {itemCart}
       <div className="discount">
-        <input 
-        type="text" 
-        width='10px'
-        maxLength={5} 
-        placeholder='Get 20% off'
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        /> 
-        <button onClick={handleApplyCoupon}>Apply</button>
-        </div>
-      <div><h4> Total Price: {totalprice}$</h4></div>
+  <div className="input-container">
+    <input 
+      type="text" 
+      width='10px'
+      maxLength={5} 
+      placeholder='Get 20% off'
+      value={inputValue}
+      onChange={(e) => setInputValue(e.target.value)}
+    /> 
+    <button onClick={handleApplyCoupon}>Apply</button>
+  </div>
+  <div className="total-price">
+    <h4>Total Price: {totalprice}$</h4>
+  </div>
+</div>
+
     </div>
   );
 }

@@ -318,6 +318,7 @@ input[type='number'] {
 .discount input{
   width: 120px;
   border: 1px solid black;
+  border-radius: 2px;
 }
 .discount button{
   color: rgb(255, 255, 255);
@@ -327,6 +328,20 @@ input[type='number'] {
   padding: 0 15px 0 15px;
   border-radius: 3px;
   font-weight: 550;
+}
+.discount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10vw;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+.total-price {
+  margin-top: 10px; /* add margin to create space between input and total price */
 }
 
 
@@ -354,5 +369,9 @@ input[type='number'] {
   }
   .contactForm {
     width: 100vw;
+  }
+  .discount {
+  
+    padding-right: 5vw;
   }
 }
