@@ -362,7 +362,7 @@ input[type='number'] {
     width: 50px;
   }
   .card4{
-    margin-left: 25vw;
+    margin-left: 15vw;
   }
   .contactBody .row{
     display: block;
@@ -371,7 +371,21 @@ input[type='number'] {
     width: 100vw;
   }
   .discount {
-  
     padding-right: 5vw;
+  }
+  .teamContainer{
+    margin-left: -10vw;
+  }
+  .w-50{
+    margin-top: 80%;
+  }
+  .footercol{
+   margin-left: 30%;
+  }
+  aside > ul li{
+    width: 100px;
+  }
+  .aside{
+    grid-template-columns: repeat(1, 100%);
   }
 }

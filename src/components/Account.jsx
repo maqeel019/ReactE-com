@@ -51,7 +51,7 @@ export default function Account() {
             </li>
           </ul>
         </aside>
-        <aside>
+        <aside className='aside'>
         {heading}
         </aside>
         

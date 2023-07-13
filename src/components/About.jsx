@@ -43,7 +43,6 @@ export default function About() {
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing eli t. Quae
           veritatis nihil minima dolor repudiandae nostrum numquam enim
-          cupiditate odio quam? t. Quae veritatis nihil minima dolor repudiandae
           nostrum numquam enim cupiditate odio quam?
         </p>
 

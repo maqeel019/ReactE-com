@@ -78,7 +78,7 @@ export default function Footer() {
             <Col>
               <Navbar variant="light">
                 <Container>
-                  <Nav className="me-auto flex-column">
+                  <Nav className="me-auto flex-column footercol">
                   <h4>For Her</h4>
                     <Nav.Link href="#home">Women Jeans</Nav.Link>
                     <Nav.Link href="#features">Women Shirts</Nav.Link>
